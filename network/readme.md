@@ -1,6 +1,6 @@
 This is the network we have been using as we conduct our experiments. It is trained to track a single mouse based on four tracking points from a top-view in the dark under red light. These points include the nose, neck, butt and tail of the animal. If your experiments were filmed under similar conditions and the network still doesn't recognize the mouse well enough consider retraining the pretrained network with more of your own video footage.
 
-After downloading the network find the <strong>pose_cfg.yaml</strong> file and change the <strong>project_path</strong> to the correct path. 
+After downloading the network find the <strong>config.yaml</strong> file and change the <strong>project_path</strong> to the correct path. 
 
 </p>
 <kbd>
