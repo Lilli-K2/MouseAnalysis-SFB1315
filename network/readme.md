@@ -5,7 +5,7 @@ After downloading the network find the <strong>config.yaml</strong> file and cha
 </p>
 <kbd>
 <strong>Attention!</strong>
-This network will obviously not work for your experiments if you are using multiple mice under different camera or lighting conditions or other animal species altogether. In this case refer to DeepLabCut to train your own network and adjust the ActiveMouse code according to the points you consider in your tracking.
+This network will obviously not work for your experiments if you are using multiple mice under different camera or lighting conditions or other animal species altogether. In this case refer to DeepLabCut to train your own network and adjust the MouseAnalysis code according to the points you consider in your tracking.
 </kbd>
 </p>
 
