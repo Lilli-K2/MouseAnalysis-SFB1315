@@ -1,87 +1,52 @@
 # MouseAnalysis
-MouseAnalysis is designed to analyze video footage of mice in homecage or enriched environment scenarios via a DeepLabCut network and then further process the resulting .csv files with a highly customizable python code to gain a quick overview of the data acquired.
+MouseAnalysis is designed to analyse video footage of mice in homecage or enriched environment scenarios via a DeepLabCut network and then further process the resulting .csv files with a highly customizable python code to gain a quick overview of the data acquired.
+
+---
+
+For analysis of files created by using [DeepLabCut-Live](https://github.com/DeepLabCut/DeepLabCut-live-GUI) and [ActiveMouse](https://github.com/Lilli-K2/ActiveMouse-SFB1315/tree/main) please refer to this particular [tutorial](https://github.com/Lilli-K2/ActiveMouse-SFB1315/tree/main/Analysis).
 
 ---
 
 ### Before you start
+
 You need to have [DeepLabCut](https://github.com/DeepLabCut/DeepLabCut) installed on you Computer. The DeepLabCut documentation also provides an extensive guide on how to train your own networks.
-To use this code without further complications it is however advised to use the [provided network](https://anaconda.org/anaconda) as most of code is specifically tailored to this model.
+To use this code without further complications it is however advised to use the [provided network](https://github.com/Lilli-K2/MouseAnalysis/tree/main/network) as most of code is specifically tailored to this model.
+
 The network is designed to recognize and track a <strong>single mouse</strong> based on four tracking points from a <strong>top-view </strong> in the dark under red light. These points include the nose, neck, butt and tail of the animal. If your experiments were conducted under similar conditions and the network still doesn't recognize the mouse well enough consider retraining the pretrained network with more of your own video footage.
 
 
-### Setting up DeepLabCut-live and ActiveMouse
+WHAT NETWORK???
 
-We recommend using a conda environment:
-- [Anaconda ](https://anaconda.org/anaconda)
-
-### Install Dependencies
-
-For a more detailed guide on installing [DeepLabCut-live](https://github.com/DeepLabCut/DeepLabCut-live) and training models with [DeepLabCut](https://github.com/DeepLabCut/DeepLabCut) please see their respective documentations.
-Now with Anaconda use the following commands.
-
-
-dlc-live gui with GPU:
-```bash
-conda create -n dlc-live python=3.7 tensorflow-gpu==1.13.1
-```
-dlc-live gui without GPU:
-```bash
-conda create -n dlc-live python=3.7 tensorflow==1.13.1 
-```
-activate the environment
-```bash
-conda activate dlc-live 
-```
-install dlc-live gui
-```bash
-pip install deeplabcut-live-gui
-```
-</p>
-<kbd>
-<strong>Attention!</strong>
-Please note that you need to manually install <strong>seaborn</strong> and <strong>matplotlib</strong> into your dlc-live environment. This is easily done with a pip install and potentially a pip upgrade of these packages.
-</kbd>
-</p>
-
-start dlc-live gui
-```bash
-dlclivegui
-```
-</p>
-<kbd>
-<strong>Additional information:</strong>
-Please keep in mind that this guide is for NVIDIA graphic cards. For other graphic cards please follow the instruction of the manufacturer.
-</kbd>
-</p>
+Save the pre-trained network to a location of your choice.
+In the <strong>config.yaml</strong> file change the <strong>project path</strong> to the correct file path you saved the file to.
 
 ---
- 
-### Setting up the camera
 
-First, you need to identify the correct index of your camera to be able to use it.
-We recommend using [this tutorial](https://github.com/Nasr-SFB1315/MouseCare/tree/main/Camera-Test) on how to determine your camera's index. 
+### Analyzing videos in DeepLabCut
 
-<img align="right" src="https://github.com/Lilli-K2/ActiveMouse/blob/main/pictures/DLClivegui.png?raw=true" />
-<p align="left">
+Open DeepLabCut as usual (for more information please refer to [DeepLabCut-Tutorial](https://deeplabcut.github.io/DeepLabCut/docs/standardDeepLabCut_UserGuide.html)).
+Now navigate to <strong>load project</strong>. Once the project is loaded go to <strong>analyze videos</strong> and select the videos you want to analyze from your folders. Make sure to check <strong>save as .csv</strong> as the entire MouseAnalysis code is csv based.
 
-In the dlc-live gui select <strong>Add Camera</strong> in the dropdown-menu of the <strong>Camera</strong> section. Now after clicking on <strong>Init Cam</strong>, choose <strong>OpenCVCam</strong> as your camera type and name your camera something you may easily recognize later. Now press <strong>Edit Camera Settings</strong> and choose the correct camera index. The other values can be modified according to your needs. We have, however, mostly been working with the standard values.
+---
+
+### Use MouseAnalysis
+
+Change the <strong>base</strong> to your desired output filename and load the correct .csv file you want to analyse into <strong>df</strong>.
 </p>
-<p align="left">
- <kbd>
+<kbd>
 <strong>Additional information:</strong>
-Changing the framerate would lead to needing to change it in ActiveMouse, as well as altering some of the calculations contained within it. This derives from our assuming a framerate of 30fps for the speed and distance calculations. Bear this in mind before modifying the framerate as it will inevitably lead to more complications.
-The resolution can also be adjusted according to your needs, but in case changing the resolution in <strong>Edit Camera Settings</strong> crashes the gui, try resetting it to 640, 480 and proceeding as usual.
-Also please note, changing the resolution in the dlc-live gui does apparently not affect the resolution of the videoinput ActiveMouse works with.
+The <strong>df1.rename</strong> command currently works with files provided to you by this particular network. Should you intend to use a different network that is also based on four tracking points the logic of this code may indeed still work for you, but a couple of things - starting with the assumed column name (in this case "DLC_resnet50_LastMouse4PointDec11shuffle1_550000") - have to be adjusted.
+Please also note that for a 4-point network this change may suffice for analysing your data generally, but all of the figures etc. will still be named under the presumption of those points being nose, neck, butt and tail.
 </kbd>
 </p>
 
-At this point it is of utmost importance to confirm that the <strong>conversion factor</strong> in ActiveMouse matches your video resolution.
-We provide conversion factors for the standard resolutions
-  - HD (1280x720)
-  - Full HD (1920x1080)
-  - 4K (4096x2160)
+Now pick the correct <strong>conversion factor</strong> for all four tracked points. This factor is based on the resolution of the video files you previously analyzed. 
+<strong>MouseAnalysis</strong> is already equipped with conversion factors for these standard resolutions:
+- HD (1280x720)
+- Full HD (1920x1080)
+- 4K (4096x2160)
 
-For any other resolution see this tutorial on finding your specific [resolution](https://github.com/Lilli-K2/ActiveMouse/tree/main/Resolution).
+For any other resolution see this tutorial on finding your specific [resolution](https://github.com/Lilli-K2/ActiveMouse/tree/main/Resolution)
 
 ---
 
