@@ -45,6 +45,12 @@ Now pick the correct <strong>conversion factor</strong> for all four tracked poi
 - 4K (4096x2160)
 
 For any other resolution see this tutorial on finding your specific [resolution](https://github.com/Lilli-K2/ActiveMouse/tree/main/Resolution)
+<p>
+<kbd>
+<strong>Attention!</strong>
+This code currently creates a lot of .csv files at different stages of the analyis. They are meant as checking points, which can be especially helpful if an error occurs or you suspect the data is not getting analysed properly. You can of course delete all of the <strong>.to_csv</strong> commands if you don't need them.
+</kbd>
+</p>
 
 ---
 
