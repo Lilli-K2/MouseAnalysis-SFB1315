@@ -15,10 +15,6 @@ You need to have [DeepLabCut](https://github.com/DeepLabCut/DeepLabCut) installe
 To use this code without further complications it is however advised to use the [provided network](https://github.com/Lilli-K2/MouseAnalysis/tree/main/network) as most of code is specifically tailored to this model.
 
 The network is designed to recognize and track a <strong>single mouse</strong> based on four tracking points from a <strong>top-view </strong> in the dark under red light. These points include the nose, neck, butt and tail of the animal. If your experiments were conducted under similar conditions and the network still doesn't recognize the mouse well enough consider retraining the pretrained network with more of your own video footage.
-
-
-WHAT NETWORK???
-
 Save the pre-trained network to a location of your choice.
 In the <strong>config.yaml</strong> file change the <strong>project path</strong> to the correct file path you saved the file to.
 
