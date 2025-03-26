@@ -33,8 +33,8 @@ Change the <strong>base</strong> to your desired output filename and load the co
 </p>
 <kbd>
 <strong>Additional information:</strong>
-The <strong>df1.rename</strong> command currently works with files provided to you by this particular network. Should you intend to use a different network that is also based on four tracking points the logic of this code may indeed still work for you, but a couple of things - starting with the assumed column name (in this case "DLC_resnet50_LastMouse4PointDec11shuffle1_550000") - have to be adjusted.
-Please also note that for a 4-point network this change may suffice for analysing your data generally, but all of the figures etc. will still be named under the presumption of those points being nose, neck, butt and tail.
+The <strong>df1.rename</strong> command currently works with files provided to you by this particular network. Should you intend to use a different network that is also based on four tracking points the logic of this code may indeed still work for you, but a couple of things - starting with the assumed column names (in this case "DLC_resnet50_LastMouse4PointDec11shuffle1_550000") - have to be adjusted.
+Please also note that for a 4-point network this change may suffice for analyzing your data generally, but all of the figures etc. will still be named under the presumption of those points being nose, neck, butt and tail.
 </kbd>
 </p>
 
