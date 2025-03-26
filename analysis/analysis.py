@@ -150,7 +150,6 @@ Nosemean_rounded = Nosemean_df.round(3)
 Nosestd_dev_rounded = Nosestd_dev.round(3)
 
 dfdistanceValueNose.to_csv(f"{filename}_{base}_FinalDistanceNose.csv")
-# Full walking distance
 distancesNose.to_csv(f"{filename}_{base}_beforeIloc.csv")
 FullDistanceNose = sum(distancesNose.iloc[0:, 1])
 plt.rcParams["figure.figsize"] = [7.00, 3.50]
@@ -220,7 +219,6 @@ Neckmean_rounded = Neckmean_df.round(3)
 Neckstd_dev_rounded = Neckstd_dev.round(3)
 
 dfdistanceValueNeck.to_csv(f"{filename}_{base}_FinalDistanceNeck.csv")
-# Full walking distance
 FullDistanceNeck = sum(distancesNeck.iloc[0:, 1])
 
 plt.rcParams["figure.figsize"] = [7.00, 3.50]
@@ -416,7 +414,7 @@ plt.plot(x_Neck, activityindexNeck, linestyle='-', label='Mouse speed [cm/s]')
 
 ax = plt.gca()
 ymin, ymax = ax.get_ylim()
-extra_space = (ymax - ymin) * 0.1  # e.g., add 10% of the current range
+extra_space = (ymax - ymin) * 0.1
 ax.set_ylim(ymin, ymax + extra_space)
 
 bbox_props = dict(facecolor="lightblue", alpha=0.3, edgecolor="black", boxstyle="round,pad=0.5")
@@ -424,7 +422,6 @@ text = (f"Full Distance: {FullDistanceNeck:.2f}cm\n"
         f"Average Distance: {Neckmean_rounded:.2f}cm\n"
         f"Standard deviation: {Neckstd_dev_rounded:.2f}")
 
-# Place text near the top using axis coordinates
 plt.text(0.05, 0.96, text,
          transform=ax.transAxes,
          fontsize=10,
@@ -504,7 +501,7 @@ dfHeatNose.to_csv(f"{filename}_{base}_newtest1.csv")
 dfHeatNose = pd.DataFrame(dfHeatNose)
 
 bin_size = 10
-x_bins = np.arange(dfHeatNose['XValueNose'].min(), dfHeatNose['XValueNose'].max() + bin_size, bin_size)  # Bin edges for x
+x_bins = np.arange(dfHeatNose['XValueNose'].min(), dfHeatNose['XValueNose'].max() + bin_size, bin_size)
 y_bins = np.arange(dfHeatNose['YValueNose'].min(), dfHeatNose['YValueNose'].max() + bin_size, bin_size)
 
 heatmap, xedges, yedges = np.histogram2d(dfHeatNose['XValueNose'], dfHeatNose['YValueNose'], bins=[x_bins, y_bins])
@@ -564,7 +561,7 @@ plt.figure((13), figsize=(8, 6))
 mask = (heatmap.T == 0)
 sns.heatmap(heatmap.T,
             cmap='viridis', cbar=False,
-            square=True, # for square cells, do we want this?
+            square=True,
             mask=mask,
             alpha=0.7
             )
@@ -572,12 +569,12 @@ plt.title('Heatmap Mouse [Neck]')
 #plt.xlabel('x')
 #plt.ylabel('y')
 plt.axis('off')
-plt.gcf().patch.set_facecolor('none')  # Set the figure background to be transparent
+plt.gcf().patch.set_facecolor('none')
 plt.gca().patch.set_facecolor('none')
 plt.savefig(f"{filename}_{base}_NoMaskHeatmapNeck.png", dpi=500, transparent=True)
 
 df1Butt["XValueButt"] = df1Butt["XValueButt"].astype(float)
-df1Butt["YValueButt"] = df1Butt["YValueButt"].astype(float) #needs to be float
+df1Butt["YValueButt"] = df1Butt["YValueButt"].astype(float)
 
 dfHeatButt = df1Butt.iloc[:, [8, 9]]
 dfHeatButt.to_csv(f"{filename}_{base}_newtestbutt1.csv")
@@ -617,7 +614,7 @@ plt.gca().patch.set_facecolor('none')
 plt.savefig(f"{filename}_{base}_NoMaskHeatmapButt.png", dpi=500, transparent=True)
 
 df1Tail["XValueTail"] = df1Tail["XValueTail"].astype(float)
-df1Tail["YValueTail"] = df1Tail["YValueTail"].astype(float) #needs to be float
+df1Tail["YValueTail"] = df1Tail["YValueTail"].astype(float)
 
 dfHeatTail = df1Tail.iloc[:, [11, 12]]
 dfHeatTail.to_csv(f"{filename}_{base}_newtesttail1.csv")
