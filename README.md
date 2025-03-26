@@ -1,6 +1,6 @@
 # MouseAnalysis
 
-MouseAnalysis is designed to analyse video footage of mice in homecage or enriched environment scenarios via a DeepLabCut network and then further process the resulting .csv files with a highly customizable python code to gain a quick overview of the data acquired.
+<strong>MouseAnalysis</strong> is designed to analyse video footage of mice in homecage or enriched environment scenarios via a <strong>DeepLabCut</strong> network and then further process the resulting .csv files with a highly customizable python code to gain a quick overview of the data acquired.
 
 ---
 
