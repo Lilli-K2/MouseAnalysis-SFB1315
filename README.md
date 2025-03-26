@@ -1,6 +1,6 @@
 # MouseAnalysis
 
-<strong>MouseAnalysis</strong> is designed to analyse video footage of mice in homecage or enriched environment scenarios via a <strong>DeepLabCut</strong> network and then further process the resulting .csv files with a highly customizable python code to gain a quick overview of the data acquired.
+<strong>MouseAnalysis</strong> is designed to analyze video footage of mice in homecage or enriched environment scenarios via a <strong>DeepLabCut</strong> network and then further process the resulting .csv files with a highly customizable python code to gain a quick overview of the data acquired.
 
 ---
 
@@ -29,7 +29,7 @@ Now navigate to <strong>load project</strong>. Once the project is loaded go to 
 
 ### Using MouseAnalysis
 
-Change the <strong>base</strong> to your desired output filename and load the correct .csv file you want to analyse into <strong>df</strong>.
+Change the <strong>base</strong> to your desired output filename and load the correct .csv file you want to analyze into <strong>df</strong>.
 </p>
 <kbd>
 <strong>Additional information:</strong>
@@ -48,7 +48,7 @@ For any other resolution see this tutorial on finding your specific [resolution]
 <p>
 <kbd>
 <strong>Attention!</strong>
-This code currently creates a lot of .csv files at different stages of the analyis. They are meant as checking points, which can be especially helpful if an error occurs or you suspect the data is not getting analysed properly. You can of course delete all of the <strong>.to_csv</strong> commands if you don't need them.
+This code currently creates a lot of .csv files at different stages of the analyis. They are meant as checking points, which can be especially helpful if an error occurs or you suspect the data is not getting analyzed properly. You can of course delete all of the <strong>.to_csv</strong> commands if you don't need them.
 </kbd>
 </p>
 
