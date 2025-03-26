@@ -1,1 +1,1 @@
-This is the code used for the .csv file analysis. For further directions please refer back to the [main page](https://github.com/Lilli-K2/MouseAnalysis).
+This is the [code](https://github.com/Lilli-K2/MouseAnalysis-SFB1315/blob/main/analysis/analysis.py) used for the .csv file analysis. For further directions please refer back to the [main page](https://github.com/Lilli-K2/MouseAnalysis).
