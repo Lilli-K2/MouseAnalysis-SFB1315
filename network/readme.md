@@ -1,7 +1,7 @@
 This is the network we have been using as we conduct our experiments. It is trained to track a <strong>single mouse</strong> based on <strong>four tracking points</strong> from a top-view in the dark under red light. These points include the nose, neck, butt and tail of the animal. If your experiments were filmed under similar conditions and the network still doesn't recognize the mouse well enough, consider retraining the pretrained network with more of your own video footage.
 
 It is advised to also download the empty folders to keep the folder structure of DeepLabCut intact in order to avoid problems when operating the network.
-After downloading the network find the <strong>config.yaml</strong> file and change the <strong>project_path</strong> to the correct path. 
+After downloading the network find the <strong>config.yaml</strong> file and change the <strong>project_path</strong> to the correct path. Should you encouter any problems analyzing new videos, try changing the project path in all of the pose_cfg.yaml files, too.
 
 </p>
 <kbd>
