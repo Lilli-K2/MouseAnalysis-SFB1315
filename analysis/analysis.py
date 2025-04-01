@@ -120,13 +120,13 @@ distancesNose = np.sqrt((dfXdefaultNose-dfXvalueNose)**2+(dfydefaultNose-dfyvalu
 #distances = (distances/px_per_cm)
 
 # Pylon/Basler 4096x2160
-distancesNeck = (distancesNeck/42)
+#distancesNose = (distancesNose/42)
 
 # OBS/MKV 1280x720
-#distancesNeck = (distancesNeck/13.2)
+#distancesNose = (distancesNose/13.2)
 
 # OBS/MKV 1920x1080
-#distancesNeck = (distancesNeck/20)
+distancesNose = (distancesNose/20)
 
 distancesNose = distancesNose.reset_index()
 distancesNose.columns.values[1] = "distance"
@@ -190,13 +190,13 @@ distancesNeck = np.sqrt((dfXdefaultNeck-dfXvalueNeck)**2+(dfydefaultNeck-dfyvalu
 #distances = (distances/px_per_cm)
 
 # Pylon/Basler 4096x2160
-distancesNeck = (distancesNeck/42)
+#distancesNeck = (distancesNeck/42)
 
 # OBS/MKV 1280x720
 #distancesNeck = (distancesNeck/13.2)
 
 # OBS/MKV 1920x1080
-#distancesNeck = (distancesNeck/20)
+distancesNeck = (distancesNeck/20)
 
 distancesNeck= distancesNeck.reset_index()
 distancesNeck.columns.values[1] = "distance"
@@ -260,13 +260,13 @@ distancesButt = np.sqrt((dfXdefaultButt-dfXvalueButt)**2+(dfydefaultButt-dfyvalu
 #distances = (distances/px_per_cm)
 
 # Pylon/Basler 4096x2160
-distancesNeck = (distancesNeck/42)
+#distancesButt = (distancesButt/42)
 
 # OBS/MKV 1280x720
-#distancesNeck = (distancesNeck/13.2)
+#distancesButt = (distancesButt/13.2)
 
 # OBS/MKV 1920x1080
-#distancesNeck = (distancesNeck/20)
+distancesButt = (distancesButt/20)
 
 distancesButt = distancesButt.reset_index()
 distancesButt.columns.values[1] = "distance"
@@ -329,13 +329,13 @@ distancesTail = np.sqrt((dfXdefaultTail-dfXvalueTail)**2+(dfydefaultTail-dfyvalu
 #distances = (distances/px_per_cm)
 
 # Pylon/Basler 4096x2160
-distancesNeck = (distancesNeck/42)
+#distancesTail = (distancesTail/42)
 
 # OBS/MKV 1280x720
-#distancesNeck = (distancesNeck/13.2)
+#distancesTail = (distancesTail/13.2)
 
 # OBS/MKV 1920x1080
-#distancesNeck = (distancesNeck/20)
+distancesTail = (distancesTail/20)
 
 distancesTail = distancesTail.reset_index()
 distancesTail.columns.values[1] = "distance"
@@ -400,7 +400,7 @@ plt.text(0.05, 0.96, text,
          bbox=bbox_props)
 
 plt.legend()
-plt.title('Mouse')
+plt.title('Mouse [Nose]')
 plt.xlabel('time [s]')
 plt.ylabel('Distance [cm]')
 plt.savefig(f"{filename}_{base}_FinalNose.png", dpi=500)
@@ -430,7 +430,7 @@ plt.text(0.05, 0.96, text,
          bbox=bbox_props)
 
 plt.legend()
-plt.title('Mouse')
+plt.title('Mouse [Neck]')
 plt.xlabel('time [s]')
 plt.ylabel('Distance [cm]')
 plt.savefig(f"{filename}_{base}_FinalNeck.png", dpi=500)
@@ -443,7 +443,7 @@ plt.plot(x_Butt, activityindexButt, linestyle='-', label='Mouse speed [cm/s]')
 
 ax = plt.gca()
 ymin, ymax = ax.get_ylim()
-extra_space = (ymax - ymin) * 0.1  
+extra_space = (ymax - ymin) * 0.1
 ax.set_ylim(ymin, ymax + extra_space)
 
 bbox_props = dict(facecolor="lightblue", alpha=0.3, edgecolor="black", boxstyle="round,pad=0.5")
@@ -459,7 +459,7 @@ plt.text(0.05, 0.96, text,
          bbox=bbox_props)
 
 plt.legend()
-plt.title('Mouse')
+plt.title('Mouse [Butt]')
 plt.xlabel('time [s]')
 plt.ylabel('Distance [cm]')
 plt.savefig(f"{filename}_{base}_FinalButt.png", dpi=500)
@@ -488,7 +488,7 @@ plt.text(0.05, 0.96, text,
          bbox=bbox_props)
 
 plt.legend()
-plt.title('Mouse')
+plt.title('Mouse [Tail]')
 plt.xlabel('time [s]')
 plt.ylabel('Distance [cm]')
 plt.savefig(f"{filename}_{base}_FinalTail.png", dpi=500)
