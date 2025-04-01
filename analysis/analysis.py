@@ -125,7 +125,7 @@ distancesNose = np.sqrt((dfXdefaultNose-dfXvalueNose)**2+(dfydefaultNose-dfyvalu
 # OBS/MKV 1280x720
 #distancesNose = (distancesNose/13.2)
 
-# OBS/MKV 1920x1080
+# OBS/MP4 1920x1080
 distancesNose = (distancesNose/20)
 
 distancesNose = distancesNose.reset_index()
@@ -195,7 +195,7 @@ distancesNeck = np.sqrt((dfXdefaultNeck-dfXvalueNeck)**2+(dfydefaultNeck-dfyvalu
 # OBS/MKV 1280x720
 #distancesNeck = (distancesNeck/13.2)
 
-# OBS/MKV 1920x1080
+# OBS/MP4 1920x1080
 distancesNeck = (distancesNeck/20)
 
 distancesNeck= distancesNeck.reset_index()
@@ -265,7 +265,7 @@ distancesButt = np.sqrt((dfXdefaultButt-dfXvalueButt)**2+(dfydefaultButt-dfyvalu
 # OBS/MKV 1280x720
 #distancesButt = (distancesButt/13.2)
 
-# OBS/MKV 1920x1080
+# OBS/MP4 1920x1080
 distancesButt = (distancesButt/20)
 
 distancesButt = distancesButt.reset_index()
@@ -334,7 +334,7 @@ distancesTail = np.sqrt((dfXdefaultTail-dfXvalueTail)**2+(dfydefaultTail-dfyvalu
 # OBS/MKV 1280x720
 #distancesTail = (distancesTail/13.2)
 
-# OBS/MKV 1920x1080
+# OBS/MP4 1920x1080
 distancesTail = (distancesTail/20)
 
 distancesTail = distancesTail.reset_index()
