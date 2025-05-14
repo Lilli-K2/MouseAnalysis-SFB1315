@@ -71,7 +71,7 @@ Please note that substandard distribution of good vs bad tracking is not necessa
 </p>
 <kbd>
 <strong>Additionally:</strong>
-Please note that tail-tracking is usually sub-par and negatively affects the total Accuracy. As neck-tracking is usually the best it's what we have found to be most reliable for judging the actual tracking quality. Nose tracking is also usually satisfactory and butt tracking varies a bit more. It can still be useful to have these figures for all of your tracking points.
+Please note that tail-tracking is usually sub-par and negatively affects the total Accuracy. As neck-tracking is usually the best it's what we have found to be most reliable for judging the actual tracking quality. Butt tracking is also usually satisfactory and nose tracking varies a bit more. It can still be useful to have these figures for all of your tracking points.
 </kbd>
 </p>
 
